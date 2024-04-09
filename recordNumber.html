@@ -1,0 +1,61 @@
+﻿<!Doctype html>
+<html>
+<head>
+    <script language="vbscript" type="text/vbscript" for="myTr" event="onclick">
+        MsgBox(document.activeElement)
+        MsgBox(document.activeElement.parentElement)
+        MsgBox(document.activeElement.parentElement.recordNumber)
+    </script>
+</head>
+<body>
+    <xml id="movies">
+        <?xml version="1.0" ?>
+        <movies>
+            <movie>
+                <name>Clark Kent</name>
+                <jobtitle>Superman</jobtitle>
+                <born>1966</born>
+            </movie>
+            <movie>
+                <name>Lois Lane</name>
+                <jobtitle>Reporter</jobtitle>
+                <born>1964</born>
+            </movie>
+            <movie>
+                <name>Fred Flintstone</name>
+                <jobtitle>Caveman</jobtitle>
+                <born>1970</born>
+            </movie>
+            <movie>
+                <name>Barney Rubble</name>
+                <jobtitle>Caveman</jobtitle>
+                <born>1972</born>
+            </movie>
+        </movies>
+    </xml>
+
+    <b>
+        Click a row in the Table to get its recordNumber!<b>
+            <table width="100%" cellpadding="0px" cellspacing="2px" border="1px" datasrc="#movies" datapagesize="1" id="myTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Jobtitle</th>
+                        <th>Born</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="myTr">
+                        <td><span datafld="name"></span></td>
+                        <td><span datafld="jobtitle"></span></td>
+                        <td><span datafld="born"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <input type="button" onclick="myTable.firstPage ()" value="|< First " />
+            <input type="button" onclick="myTable.previousPage ()" value="< Previous " />
+            <input type="button" onclick="myTable.nextPage ()" value=" Next >" />
+            <input type="button" onclick="myTable.lastPage ()" value=" Last >|" />
+</body>
+</html>
