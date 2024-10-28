@@ -3,7 +3,7 @@
         host = host.toLowerCase();
         clientIP = myIpAddress();
     
-        if (shExpMatch(clientIP, "10.32.*")) {
+        if (shExpMatch(clientIP, "10.0.*")) {
             return "PROXY mybogusproxy.com";
         }
     
